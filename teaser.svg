@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Research Figure Checklist teaser</title>
+  <desc id="desc">A clean banner showing research figures moving from guide to checklist, cases, and templates.</desc>
+
+  <rect width="1200" height="360" fill="#FAFAFA"/>
+
+  <g transform="translate(72 54)">
+    <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#1A1A1A">
+      Research Figure Checklist
+    </text>
+    <text x="0" y="34" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#555555">
+      Build publication figures as evidence chains, not just visual summaries.
+    </text>
+  </g>
+
+  <g transform="translate(72 124)">
+    <rect x="0" y="0" width="248" height="170" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <text x="22" y="34" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#3C5488">Guide</text>
+    <text x="22" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666">Question first</text>
+    <line x1="22" y1="82" x2="210" y2="82" stroke="#E6E6E6" stroke-width="2"/>
+    <circle cx="34" cy="112" r="8" fill="#3C5488" fill-opacity="0.22" stroke="#3C5488"/>
+    <path d="M31 112 L34 115 L39 108" fill="none" stroke="#3C5488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="117" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#333333">What should the reader believe?</text>
+    <circle cx="34" cy="142" r="8" fill="#3C5488" fill-opacity="0.14" stroke="#3C5488"/>
+    <path d="M31 142 L34 145 L39 138" fill="none" stroke="#3C5488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="54" y="147" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#333333">What evidence supports it?</text>
+  </g>
+
+  <g transform="translate(342 124)">
+    <rect x="0" y="0" width="248" height="170" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <text x="22" y="34" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#00A087">Checklist</text>
+    <text x="22" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666">Before submission</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#333333">
+      <rect x="24" y="78" width="15" height="15" rx="3" fill="#00A087" fill-opacity="0.18" stroke="#00A087"/>
+      <path d="M27 85 L31 89 L37 80" fill="none" stroke="#00A087" stroke-width="2" stroke-linecap="round"/>
+      <text x="52" y="91">Axes, units, and labels</text>
+      <rect x="24" y="108" width="15" height="15" rx="3" fill="#00A087" fill-opacity="0.18" stroke="#00A087"/>
+      <path d="M27 115 L31 119 L37 110" fill="none" stroke="#00A087" stroke-width="2" stroke-linecap="round"/>
+      <text x="52" y="121">Statistics and sample size</text>
+      <rect x="24" y="138" width="15" height="15" rx="3" fill="#00A087" fill-opacity="0.18" stroke="#00A087"/>
+      <path d="M27 145 L31 149 L37 140" fill="none" stroke="#00A087" stroke-width="2" stroke-linecap="round"/>
+      <text x="52" y="151">Readable export formats</text>
+    </g>
+  </g>
+
+  <g transform="translate(612 124)">
+    <rect x="0" y="0" width="248" height="170" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <text x="22" y="34" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#E64B35">Cases</text>
+    <text x="22" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666">Before and after</text>
+    <rect x="24" y="80" width="84" height="62" rx="5" fill="#F3F3F3" stroke="#D0D0D0"/>
+    <path d="M38 126 C52 94 76 112 94 88" fill="none" stroke="#8C8C8C" stroke-width="3"/>
+    <text x="40" y="158" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777777">concept</text>
+    <path d="M118 111 L137 111" stroke="#9A9A9A" stroke-width="2"/>
+    <path d="M137 111 L130 105 M137 111 L130 117" fill="none" stroke="#9A9A9A" stroke-width="2" stroke-linecap="round"/>
+    <rect x="150" y="80" width="74" height="62" rx="5" fill="#FFFFFF" stroke="#D0D0D0"/>
+    <rect x="162" y="102" width="10" height="28" fill="#4DBBD5" fill-opacity="0.55"/>
+    <rect x="181" y="91" width="10" height="39" fill="#3C5488" fill-opacity="0.55"/>
+    <rect x="200" y="112" width="10" height="18" fill="#E64B35" fill-opacity="0.55"/>
+    <line x1="158" y1="130" x2="216" y2="130" stroke="#333333"/>
+    <text x="162" y="158" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#777777">evidence</text>
+  </g>
+
+  <g transform="translate(882 124)">
+    <rect x="0" y="0" width="248" height="170" rx="8" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <text x="22" y="34" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#7E6148">Templates</text>
+    <text x="22" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#666666">Reusable figure briefs</text>
+    <rect x="24" y="80" width="200" height="70" rx="5" fill="#FFFFFF" stroke="#D9D9D9"/>
+    <line x1="42" y1="102" x2="198" y2="102" stroke="#E6E6E6" stroke-width="3"/>
+    <line x1="42" y1="122" x2="174" y2="122" stroke="#E6E6E6" stroke-width="3"/>
+    <line x1="42" y1="142" x2="206" y2="142" stroke="#E6E6E6" stroke-width="3"/>
+    <rect x="24" y="80" width="200" height="18" rx="5" fill="#7E6148" fill-opacity="0.16"/>
+  </g>
+
+  <g transform="translate(72 318)">
+    <rect x="0" y="-18" width="1056" height="1" fill="#E0E0E0"/>
+    <text x="0" y="9" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#666666">
+      Guide + Checklist + Cases + Templates for clearer, reproducible research figures.
+    </text>
+  </g>
+</svg>
