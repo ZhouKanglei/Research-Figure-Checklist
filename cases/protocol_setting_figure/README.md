@@ -4,13 +4,13 @@
 
 任务设定图常用于解释训练、适应、测试、时间顺序和数据划分方式。它不一定包含实验结果，但必须清楚回答一个问题：**论文到底在什么设定下解决什么问题？**
 
-![Protocol figure comparison](fig/comparison.png)
+![Protocol figure comparison](fig/comparison.jpg)
 
 ## 文件说明
 
 - [original.jpg](fig/original.jpg)：原始 protocol figure
 - [revised.jpg](fig/revised.jpg)：修改后的 protocol figure
-- [comparison.png](fig/comparison.png)：原图与修改后效果对比
+- [comparison.jpg](fig/comparison.jpg)：原图与修改后效果对比
 
 本案例重点不是讨论图中协议是否正确，而是讨论如何把复杂实验设定组织成更清晰、更适合论文主文的示意图。
 
