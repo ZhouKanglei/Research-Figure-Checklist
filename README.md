@@ -69,6 +69,36 @@ plt.rcParams.update(
 
 `pdf.fonttype = 42` 和 `ps.fonttype = 42` 可以让导出的矢量文件保留 TrueType 字体，减少后续在 Illustrator、PowerPoint 或投稿系统中出现字体替换问题。
 
+### PowerPoint 配置 Latin Modern Math 字体
+
+#### 为什么需要
+
+如果用 PowerPoint 画示意图或后期编辑公式，默认数学字体通常和 LaTeX 论文中的公式风格不一致。可以将公式字体设置为 `Latin Modern Math`，它和 LaTeX 常见的 Computer Modern / Latin Modern 风格更接近。
+
+正文、坐标轴和普通标注仍可使用 Arial 或 Helvetica；数学符号、变量和公式建议使用 `Latin Modern Math`。
+
+#### 怎么安装
+
+Linux 下可以安装 Latin Modern 字体包：
+
+```bash
+sudo apt update
+sudo apt install fonts-lmodern
+sudo fc-cache -f -v
+```
+
+如果已经安装完整 TeX Live，系统中通常也会包含 Latin Modern 相关字体。
+
+#### 怎么检查
+
+```bash
+fc-match "Latin Modern Math"
+```
+
+#### 常见问题
+
+PowerPoint 中插入公式后，可以选中公式内容，将数学字体改为 `Latin Modern Math`。如果字体列表中找不到该字体，通常是系统字体没有安装或 PowerPoint 尚未重新加载字体缓存。
+
 ### 用 `pdfcrop` 自动裁剪 Matplotlib 导出的 PDF
 
 #### 为什么需要
