@@ -31,7 +31,8 @@ nav:
   - 检查清单:
       - 通用科研绘图 Checklist: checklists/general_figure_checklist.md
   - 环境配置:
-      - 字体配置: fonts/README.md
+      - 环境概览: environment/README.md
+      - 字体配置: environment/fonts/README.md
   - 配色方案: palettes/README.md
   - 案例分析:
       - 证据型科研图: cases/evidence_oriented_figure/README.md
@@ -62,3 +63,6 @@ plugins:
 
 extra_css:
   - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/last-updated.js

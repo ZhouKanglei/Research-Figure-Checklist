@@ -142,7 +142,7 @@ def main():
     )
 
     fig.suptitle("Sans-serif vs. serif fonts inside research figures", fontsize=18, fontweight="bold", fontfamily="Arial")
-    fig.savefig("fonts/fig/font_comparison.png", dpi=220, bbox_inches="tight")
+    fig.savefig("environment/fonts/fig/font_comparison.png", dpi=220, bbox_inches="tight")
 
 
 if __name__ == "__main__":
