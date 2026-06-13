@@ -23,7 +23,7 @@ PALETTES = {
         "#BCBD22",
         "#17BECF",
     ],
-    "Nature": [
+    "NPG": [
         "#E64B35",
         "#4DBBD5",
         "#00A087",

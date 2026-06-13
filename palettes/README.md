@@ -1,6 +1,8 @@
 # 科研图配色方案
 
-本目录整理适合论文图、汇报图和多子图科研图的常用配色。Nature、Science、Lancet 指的是对应期刊常见视觉风格的配色方案，**不是投稿强制标准**；Matplotlib 默认配色则作为 Python 绘图的基线参照。
+本目录整理适合论文图、汇报图和多子图科研图的常用配色。NPG、Science、Lancet 指的是对应期刊常见视觉风格的配色方案，**不是投稿强制标准**；Matplotlib 默认配色只作为 Python 绘图的基线参照。
+
+本站点的 **默认推荐配色方案是 NPG**。如果没有特殊领域或期刊风格要求，优先从 NPG 开始，再根据图的语义和可读性微调。
 
 实际使用时，优先级应是：**可读性 > 语义一致 > 风格接近**。如果颜色在缩小后的论文 PDF 中难以区分，就不应只因为它“像某个期刊风格”而继续使用。
 
@@ -53,16 +55,16 @@ import matplotlib.pyplot as plt
 MATPLOTLIB_DEFAULT = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 ```
 
-## Nature 风格
+## NPG 风格
 
-Nature 风格适合大多数机器学习、生物医学和综合科研图。**它比较适合作为通用论文配色。**
+NPG 风格适合大多数机器学习、生物医学和综合科研图。**本站点默认推荐使用这套配色作为通用论文配色。**
 
 这套配色的蓝、青、绿、红区分明显，适合多方法对比和多子图科研图；如果图中已经有大量文字或标注，可以适当降低填充透明度。
 
 ### 十六进制颜色
 
 ```python
-NATURE_HEX = [
+NPG_HEX = [
     "#E64B35",  # 朱红色
     "#4DBBD5",  # 青蓝色
     "#00A087",  # 绿色
@@ -79,7 +81,7 @@ NATURE_HEX = [
 ### RGB
 
 ```python
-NATURE_RGB = [
+NPG_RGB = [
     (230, 75, 53),
     (77, 187, 213),
     (0, 160, 135),
@@ -98,14 +100,14 @@ NATURE_RGB = [
 ```python
 from matplotlib.colors import to_rgba
 
-NATURE_RGBA_032 = [to_rgba(color, alpha=0.32) for color in NATURE_HEX]
-NATURE_RGBA_060 = [to_rgba(color, alpha=0.60) for color in NATURE_HEX]
+NPG_RGBA_032 = [to_rgba(color, alpha=0.32) for color in NPG_HEX]
+NPG_RGBA_060 = [to_rgba(color, alpha=0.60) for color in NPG_HEX]
 ```
 
 常用语义映射：
 
 ```python
-NATURE_SEMANTIC = {
+NPG_SEMANTIC = {
     "risk": to_rgba("#E64B35", alpha=0.32),
     "baseline": to_rgba("#3C5488", alpha=0.32),
     "method": to_rgba("#4DBBD5", alpha=0.32),
@@ -247,7 +249,7 @@ LANCET_SEMANTIC = {
 ```python
 from matplotlib.colors import to_rgba
 
-NATURE = {
+NPG = {
     "red": "#E64B35",
     "cyan": "#4DBBD5",
     "green": "#00A087",
@@ -256,11 +258,11 @@ NATURE = {
 }
 
 COLORS = {
-    "main": to_rgba(NATURE["blue"], alpha=0.32),
-    "compare": to_rgba(NATURE["cyan"], alpha=0.32),
-    "gain": to_rgba(NATURE["red"], alpha=0.32),
-    "highlight": to_rgba(NATURE["green"], alpha=0.60),
-    "background": to_rgba(NATURE["gray"], alpha=0.24),
+    "main": to_rgba(NPG["blue"], alpha=0.32),
+    "compare": to_rgba(NPG["cyan"], alpha=0.32),
+    "gain": to_rgba(NPG["red"], alpha=0.32),
+    "highlight": to_rgba(NPG["green"], alpha=0.60),
+    "background": to_rgba(NPG["gray"], alpha=0.24),
     "text": "#1A1A1A",
     "grid": "#E6E6E6",
 }
