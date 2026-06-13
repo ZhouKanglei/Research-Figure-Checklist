@@ -1,4 +1,4 @@
-![](teaser.svg)
+[![](teaser.svg)](https://zhoukanglei.github.io/Research-Figure-Checklist)
 
 科研绘图不是简单地“把数据画出来”，而是将实验结果转化为论文论证的一部分。
 
@@ -7,7 +7,7 @@
 示例主要来自计算机科学领域，尤其是机器学习与计算机视觉方向，并以 `LaTeX`、`Matplotlib` 和 `PowerPoint` 为主要工具；相关绘图原则也可为其他学科提供参考。
 
 
->[!tip] 建议直接查看[在线版本](https://zhoukanglei.github.io/Research-Figure-Checklist)。本仓库目前主要包括以下内容：
+建议直接查看[在线版本](https://zhoukanglei.github.io/Research-Figure-Checklist)。本仓库目前主要包括以下内容：
 
 - [什么是好的科研图？](docs/what_makes_a_good_figure.md)
 - [通用科研绘图 Checklist](checklists/general_figure_checklist.md)
