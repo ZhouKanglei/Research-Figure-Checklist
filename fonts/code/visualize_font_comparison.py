@@ -25,14 +25,6 @@ NPG_HEX = [
 ]
 
 
-FONT_CANDIDATES = [
-    ("Arial", "Common choice for English \npaper figures"),
-    ("Helvetica", "Common alternative;\nmay fall back on Linux"),
-    ("DejaVu Sans", "Common Linux fallback font"),
-    ("Latin Modern Math", "Math style reference;\ncheck availability"),
-]
-
-
 def matched_font_name(font_name):
     try:
         result = subprocess.run(
@@ -46,7 +38,7 @@ def matched_font_name(font_name):
         return "unknown"
 
 
-def setup_axis(ax):
+def setup_axis(ax, fontfamily):
     ax.set_facecolor(STYLE["face"])
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -54,9 +46,11 @@ def setup_axis(ax):
     ax.spines["bottom"].set_color(STYLE["spine"])
     ax.spines["left"].set_linewidth(0.75)
     ax.spines["bottom"].set_linewidth(0.75)
-    ax.tick_params(labelsize=8.5, width=0.75, length=5.5, direction="out")
+    ax.tick_params(labelsize=11, width=0.75, length=5.5, direction="out")
     ax.grid(axis="y", color=STYLE["grid"], linewidth=0.65)
     ax.set_axisbelow(True)
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontfamily(fontfamily)
 
 
 def draw_type_comparison(ax, title, font_name, description):
@@ -65,7 +59,7 @@ def draw_type_comparison(ax, title, font_name, description):
     x = np.arange(3)
     values = np.array([0.68, 0.74, 0.82])
 
-    setup_axis(ax)
+    setup_axis(ax, family)
     bars = ax.bar(x, values, width=0.42, color=NPG_HEX[:3], alpha=0.50, edgecolor="black", linewidth=0.8)
     for bar in bars:
         height = bar.get_height()
@@ -75,7 +69,7 @@ def draw_type_comparison(ax, title, font_name, description):
             f"{height:.2f}",
             ha="center",
             va="bottom",
-            fontsize=9,
+            fontsize=12,
             fontfamily=family,
             color="#222222",
         )
@@ -83,90 +77,35 @@ def draw_type_comparison(ax, title, font_name, description):
     ax.set_ylim(0.50, 0.90)
     ax.set_yticks(np.arange(0.50, 0.91, 0.10))
     ax.set_xticks(x)
-    ax.set_xticklabels(["D1", "D2", "D3"], fontfamily=family)
-    ax.set_ylabel("Score", fontfamily=family, fontsize=10)
-    ax.set_title(title, fontfamily=family, fontweight="bold", fontsize=13, pad=8)
+    ax.set_xticklabels(["D1", "D2", "D3"], fontfamily=family, fontsize=12)
+    for label in ax.get_yticklabels():
+        label.set_fontfamily(family)
+        label.set_fontsize(11)
+    ax.set_ylabel("Score", fontfamily=family, fontsize=13)
+    ax.set_title(title, fontfamily=family, fontweight="bold", fontsize=17, pad=10)
     ax.text(
         0.02,
-        0.93,
-        f"Requested: {font_name} | Matched: {actual_font}",
+        0.98,
+        f"Requested: {font_name} \nMatched: {actual_font}",
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=10,
+        fontsize=12,
         fontfamily=family,
         color=STYLE["muted"],
     )
     ax.text(
         0.02,
-        -0.22,
+        -0.20,
         description,
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=10,
+        fontsize=12,
         fontfamily=family,
         color=STYLE["muted"],
         clip_on=False,
     )
-
-
-def draw_row(ax, requested_font, note):
-    actual_font = matched_font_name(requested_font)
-    family = actual_font if actual_font != "unknown" else requested_font
-
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.axis("off")
-
-    ax.text(0.02, 0.76, requested_font, fontfamily=family, fontsize=14.5, fontweight="bold", color="#111111")
-    ax.text(0.02, 0.48, f"Matched font: {actual_font}", fontfamily="Arial", fontsize=10, color=STYLE["muted"])
-    ax.text(0.02, 0.22, note, fontfamily="Arial", fontsize=10, color=STYLE["muted"])
-
-    ax.text(
-        0.34,
-        0.67,
-        "Accuracy 0.82  |  Macro-AUC 0.76",
-        fontfamily=family,
-        fontsize=11.2,
-        color="#222222",
-    )
-    ax.text(
-        0.34,
-        0.38,
-        "x = [1, 2, 3], y = [0.61, 0.70, 0.78]",
-        fontfamily=family,
-        fontsize=9.4,
-        color="#333333",
-    )
-    ax.text(
-        0.72,
-        0.58,
-        r"$\Delta = y_{t+1} - y_t$",
-        fontfamily=family,
-        fontsize=13,
-        color="#222222",
-    )
-
-    ax.plot([0.34, 0.94], [0.13, 0.13], color="#D4D4D4", linewidth=0.8)
-
-
-def draw_mini_axis(ax):
-    x = np.arange(1, 6)
-    y = np.array([0.61, 0.64, 0.69, 0.73, 0.76])
-
-    setup_axis(ax)
-    ax.plot(x, y, color=NPG_HEX[3], marker="o", markersize=4.8, linewidth=1.6)
-    ax.set_xlim(0.8, 5.2)
-    ax.set_ylim(0.55, 0.80)
-    ax.set_yticks(np.arange(0.55, 0.801, 0.05))
-    ax.set_xticks(x)
-    ax.set_xlabel("Block", fontfamily="Arial", fontsize=10)
-    ax.set_ylabel("AUC", fontfamily="Arial", fontsize=10)
-    ax.set_title("Arial in axes and ticks", fontfamily="Arial", fontweight="bold", fontsize=12, pad=8)
-    for label in ax.get_xticklabels() + ax.get_yticklabels():
-        label.set_fontfamily("Arial")
-
 
 def main():
     plt.rcParams.update(
@@ -188,10 +127,7 @@ def main():
         }
     )
 
-    fig = plt.figure(figsize=(11.2, 8.2), constrained_layout=True)
-    top_fig, bottom_fig = fig.subfigures(2, 1, height_ratios=[1.20, 2.35])
-
-    type_axes = top_fig.subplots(1, 2)
+    fig, type_axes = plt.subplots(1, 2, figsize=(10, 3.8), constrained_layout=True)
     draw_type_comparison(
         type_axes[0],
         "Sans-serif inside figures",
@@ -205,17 +141,8 @@ def main():
         "More decorative strokes; often denser at small sizes.",
     )
 
-    subfigs = bottom_fig.subfigures(1, 2, width_ratios=[2.6, 1.0])
-    row_axes = subfigs[0].subplots(4, 1)
-    mini_ax = subfigs[1].subplots(1, 1)
-
-    for ax, (font_name, note) in zip(row_axes, FONT_CANDIDATES):
-        draw_row(ax, font_name, note)
-
-    draw_mini_axis(mini_ax)
-    fig.suptitle("Font choices for research figures", fontsize=15, fontweight="bold", fontfamily="Arial")
+    fig.suptitle("Sans-serif vs. serif fonts inside research figures", fontsize=18, fontweight="bold", fontfamily="Arial")
     fig.savefig("fonts/fig/font_comparison.png", dpi=220, bbox_inches="tight")
-    fig.savefig("fonts/fig/font_comparison.svg", bbox_inches="tight")
 
 
 if __name__ == "__main__":

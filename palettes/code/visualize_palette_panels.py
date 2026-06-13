@@ -69,7 +69,9 @@ def setup_axis(ax):
     ax.spines["bottom"].set_color(STYLE["spine"])
     ax.spines["left"].set_linewidth(0.75)
     ax.spines["bottom"].set_linewidth(0.75)
-    ax.tick_params(colors="#2A2A2A", labelsize=7, length=5.5, width=0.75, direction="out")
+    ax.tick_params(
+        colors="#2A2A2A", labelsize=7, length=5.5, width=0.75, direction="out"
+    )
     ax.grid(axis="y", color=STYLE["grid"], linewidth=0.65)
     ax.set_axisbelow(True)
 
@@ -274,7 +276,6 @@ def main():
         fontweight="bold",
     )
     fig.savefig("palettes/fig/palette_panel_examples.png", dpi=220, bbox_inches="tight")
-    fig.savefig("palettes/fig/palette_panel_examples.svg", bbox_inches="tight")
 
 
 if __name__ == "__main__":
