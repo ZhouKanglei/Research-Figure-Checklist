@@ -1,33 +1,78 @@
 # 科研图配色方案
 
-本目录整理适合论文图、汇报图和 multi-panel figure 的期刊风格配色。这里的 Nature、Science、Cell 指的是对应期刊常见视觉风格的 palette，不是投稿强制标准。实际使用时应优先保证可读性、色盲友好和灰度打印可区分。
+本目录整理适合论文图、汇报图和多子图科研图的常用配色。Nature、Science、Lancet 指的是对应期刊常见视觉风格的配色方案，**不是投稿强制标准**；Matplotlib 默认配色则作为 Python 绘图的基线参照。
+
+实际使用时，优先级应是：**可读性 > 语义一致 > 风格接近**。如果颜色在缩小后的论文 PDF 中难以区分，就不应只因为它“像某个期刊风格”而继续使用。
 
 ## 使用原则
 
-- 同一篇论文中尽量固定一套主 palette。
-- 颜色要承担语义，而不是只做装饰。
-- 类别数少时优先使用高区分度颜色；类别数多时降低饱和度。
-- 柱状图、面积图、散点背景点可以使用半透明色。
-- 文字、坐标轴和误差线不要使用过浅颜色。
+- **同一篇论文中尽量固定一套主配色。** 同一种方法、同一种数据集或同一种语义，在不同图中应尽量保持同色。
+- **颜色要承担语义，而不是只做装饰。** 例如 baseline、proposed method、risk、gain 这类概念应有稳定映射。
+- **类别少时优先使用高区分度颜色；类别多时降低饱和度。** 类别过多时，不要试图让每个颜色都很抢眼。
+- **柱状图、面积图、背景散点可以使用半透明色。** 这样能降低视觉压力，也方便多个元素共存。
+- **文字、坐标轴和误差线不要使用过浅颜色。** 这些元素承担读数功能，应优先保证清楚。
+
+## 不同子图形态示例
+
+下面把 Python 默认配色和三套期刊风格配色放到常见科研图子图中对比。**选择配色时不要只看单个色块**，还要检查它在目标图形形态中的可读性。
+
+图中包含几类常见形态：色条用于检查颜色区分度，柱状图适合方法或设置对比，折线图适合趋势变化，散点图适合样本分布，热力图适合矩阵或混淆结果。
+
+![不同配色在常见科研图子图中的效果](fig/palette_panel_examples.png)
+
+生成脚本见 [visualize_palette_panels.py](code/visualize_palette_panels.py)。如果论文中只包含两到三类方法，**优先使用每套配色的前 3-4 个高区分度颜色**；如果是多子图科研图，**同一方法或同一语义在所有子图中应保持同色**。
+
+## Matplotlib 默认风格
+
+Matplotlib 默认颜色循环来自 Tableau / `tab10` 风格。**它适合快速探索和草图，不一定适合直接作为论文最终配色。**
+
+它的优点是开箱即用、区分度较高；缺点是默认橙、绿、红、紫等颜色在正式论文中可能显得较强，且不同论文中容易出现 Python 默认图的视觉痕迹。
+
+### 十六进制颜色
+
+```python
+MATPLOTLIB_HEX = [
+    "#1F77B4",  # 蓝色
+    "#FF7F0E",  # 橙色
+    "#2CA02C",  # 绿色
+    "#D62728",  # 红色
+    "#9467BD",  # 紫色
+    "#8C564B",  # 棕色
+    "#E377C2",  # 粉色
+    "#7F7F7F",  # 灰色
+    "#BCBD22",  # 橄榄色
+    "#17BECF",  # 青色
+]
+```
+
+### Matplotlib 当前环境读取方式
+
+```python
+import matplotlib.pyplot as plt
+
+MATPLOTLIB_DEFAULT = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+```
 
 ## Nature 风格
 
-Nature 风格适合大多数机器学习、生物医学和综合科研图。特点是蓝、青、绿、红区分明显，适合多方法对比和多 panel figure。
+Nature 风格适合大多数机器学习、生物医学和综合科研图。**它比较适合作为通用论文配色。**
 
-### Hex
+这套配色的蓝、青、绿、红区分明显，适合多方法对比和多子图科研图；如果图中已经有大量文字或标注，可以适当降低填充透明度。
+
+### 十六进制颜色
 
 ```python
 NATURE_HEX = [
-    "#E64B35",  # vermilion red
-    "#4DBBD5",  # cyan blue
-    "#00A087",  # green
-    "#3C5488",  # dark blue
-    "#F39B7F",  # salmon
-    "#8491B4",  # muted purple blue
-    "#91D1C2",  # mint
-    "#DC0000",  # strong red
-    "#7E6148",  # brown
-    "#B09C85",  # taupe
+    "#E64B35",  # 朱红色
+    "#4DBBD5",  # 青蓝色
+    "#00A087",  # 绿色
+    "#3C5488",  # 深蓝色
+    "#F39B7F",  # 鲑红色
+    "#8491B4",  # 灰紫蓝色
+    "#91D1C2",  # 薄荷绿色
+    "#DC0000",  # 强红色
+    "#7E6148",  # 棕色
+    "#B09C85",  # 灰褐色
 ]
 ```
 
@@ -73,22 +118,24 @@ NATURE_SEMANTIC = {
 
 ## Science 风格
 
-Science 风格适合对比强、结论明确的结果图。特点是深蓝、正红、绿色和紫色对比强，适合方法比较、分类结果和关键实验组。
+Science 风格适合对比强、结论明确的结果图。**当图的重点是突出主要差异时，可以优先考虑这套配色。**
 
-### Hex
+它的深蓝、正红、绿色和紫色对比强，适合方法比较、分类结果和关键实验组；但如果同一张图中类别很多，需要注意避免颜色过于拥挤。
+
+### 十六进制颜色
 
 ```python
 SCIENCE_HEX = [
-    "#3B4992",  # deep blue
-    "#EE0000",  # red
-    "#008B45",  # green
-    "#631879",  # purple
-    "#008280",  # teal
-    "#BB0021",  # dark red
-    "#5F559B",  # violet blue
-    "#A20056",  # magenta
-    "#808180",  # gray
-    "#1B1919",  # near black
+    "#3B4992",  # 深蓝色
+    "#EE0000",  # 红色
+    "#008B45",  # 绿色
+    "#631879",  # 紫色
+    "#008280",  # 蓝绿色
+    "#BB0021",  # 深红色
+    "#5F559B",  # 紫蓝色
+    "#A20056",  # 洋红色
+    "#808180",  # 灰色
+    "#1B1919",  # 近黑色
 ]
 ```
 
@@ -132,41 +179,41 @@ SCIENCE_SEMANTIC = {
 }
 ```
 
-## Cell 风格
+## Lancet 风格
 
-Cell 风格适合机制图、组学图和多类别实验图。这里采用 Cell Press 风格的高区分度色组：蓝、橙、绿、红、紫、棕、粉、灰组合，适合同时展示多个类别或条件。
+Lancet 风格适合医学、生物医学和临床实验结果图。**如果图中包含实验组对照、临床队列或医学任务结果，这套配色通常比较稳妥。**
 
-### Hex
+这里采用常见的 Lancet Oncology 色组，也就是 `ggsci::pal_lancet("lanonc")` 对应的配色。整体对比强、主色偏稳重，适合方法对比、实验组对照和多子图结果图。
+
+### 十六进制颜色
 
 ```python
-CELL_HEX = [
-    "#1F77B4",  # blue
-    "#FF7F0E",  # orange
-    "#2CA02C",  # green
-    "#D62728",  # red
-    "#9467BD",  # purple
-    "#8C564B",  # brown
-    "#E377C2",  # pink
-    "#7F7F7F",  # gray
-    "#BCBD22",  # olive
-    "#17BECF",  # cyan
+LANCET_HEX = [
+    "#00468B",  # 深蓝色
+    "#ED0000",  # 红色
+    "#42B540",  # 绿色
+    "#0099B4",  # 青色
+    "#925E9F",  # 紫色
+    "#FDAF91",  # 浅鲑红色
+    "#AD002A",  # 深红色
+    "#ADB6B6",  # 灰青色
+    "#1B1919",  # 近黑色
 ]
 ```
 
 ### RGB
 
 ```python
-CELL_RGB = [
-    (31, 119, 180),
-    (255, 127, 14),
-    (44, 160, 44),
-    (214, 39, 40),
-    (148, 103, 189),
-    (140, 86, 75),
-    (227, 119, 194),
-    (127, 127, 127),
-    (188, 189, 34),
-    (23, 190, 207),
+LANCET_RGB = [
+    (0, 70, 139),
+    (237, 0, 0),
+    (66, 181, 64),
+    (0, 153, 180),
+    (146, 94, 159),
+    (253, 175, 145),
+    (173, 0, 42),
+    (173, 182, 182),
+    (27, 25, 25),
 ]
 ```
 
@@ -175,19 +222,19 @@ CELL_RGB = [
 ```python
 from matplotlib.colors import to_rgba
 
-CELL_RGBA_032 = [to_rgba(color, alpha=0.32) for color in CELL_HEX]
-CELL_RGBA_060 = [to_rgba(color, alpha=0.60) for color in CELL_HEX]
+LANCET_RGBA_032 = [to_rgba(color, alpha=0.32) for color in LANCET_HEX]
+LANCET_RGBA_060 = [to_rgba(color, alpha=0.60) for color in LANCET_HEX]
 ```
 
 常用语义映射：
 
 ```python
-CELL_SEMANTIC = {
-    "group_a": to_rgba("#1F77B4", alpha=0.32),
-    "group_b": to_rgba("#FF7F0E", alpha=0.32),
-    "group_c": to_rgba("#2CA02C", alpha=0.32),
-    "negative": to_rgba("#7F7F7F", alpha=0.24),
-    "positive": to_rgba("#D62728", alpha=0.32),
+LANCET_SEMANTIC = {
+    "baseline": to_rgba("#00468B", alpha=0.32),
+    "proposed": to_rgba("#ED0000", alpha=0.32),
+    "secondary": to_rgba("#42B540", alpha=0.32),
+    "cohort": to_rgba("#0099B4", alpha=0.32),
+    "background": to_rgba("#ADB6B6", alpha=0.24),
     "text": "#1A1A1A",
     "grid": "#E6E6E6",
 }
@@ -221,12 +268,19 @@ COLORS = {
 
 ## 透明度建议
 
-| 场景 | 推荐 alpha |
+| 场景 | 推荐透明度 |
 | --- | --- |
 | 主柱状图填充 | `0.32` - `0.45` |
 | 散点主类别 | `0.55` - `0.75` |
 | 背景散点 | `0.18` - `0.32` |
-| inset 或辅助区域 | `0.24` - `0.45` |
+| 内嵌小图或辅助区域 | `0.24` - `0.45` |
 | 高亮边框、文字、误差线 | 不建议透明 |
 
-注意：透明色适合降低视觉压力，但不适合用于细线、文字和误差线。导出 PDF 时也要检查透明叠加是否符合期刊投稿系统要求。
+注意：**透明色适合降低视觉压力，但不适合用于细线、文字和误差线。** 导出 PDF 时也要检查透明叠加是否符合期刊投稿系统要求。
+
+## 参考资料
+
+- [Matplotlib 默认颜色循环示例](https://matplotlib.org/stable/gallery/color/color_cycle_default.html)：查看默认颜色循环的来源和显示效果。
+- [Matplotlib 颜色循环设置](https://matplotlib.org/stable/users/explain/artists/color_cycle.html)：在 `rcParams` 或单个 `Axes` 中设置颜色循环。
+- [ggsci 的 Lancet 期刊配色](https://nanx.me/ggsci/reference/pal_lancet.html)：Lancet / Lancet Oncology 风格配色来源说明。
+- [微生信：常见期刊配色，SCI 论文配色](https://bioinformatics.com.cn/static/others/colorsets/colors.html)：更多期刊风格和科研绘图配色集合。

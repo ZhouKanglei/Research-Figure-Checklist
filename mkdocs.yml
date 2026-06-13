@@ -1,0 +1,64 @@
+site_name: Research Figure Checklist
+site_description: 科研绘图原则、检查清单、配色方案与案例分析
+site_url: ""
+repo_url: "https://github.com/ZhouKanglei/Research-Figure-Checklist"
+
+docs_dir: site_docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: white
+      accent: blue
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+
+nav:
+  - 首页: index.md
+  - 绘图原则:
+      - 什么是好的科研图: docs/what_makes_a_good_figure.md
+  - 检查清单:
+      - 通用科研绘图 Checklist: checklists/general_figure_checklist.md
+  - 环境配置:
+      - 字体配置: fonts/README.md
+  - 配色方案: palettes/README.md
+  - 案例分析:
+      - 证据型科研图: cases/evidence_oriented_figure/README.md
+      - 多子图证据链分析图: cases/multi_panel_evidence_chain_figure/README.md
+      - 设置消融图: cases/partition_ablation_figure/README.md
+      - 任务设定图: cases/protocol_setting_figure/README.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+extra_css:
+  - assets/stylesheets/extra.css

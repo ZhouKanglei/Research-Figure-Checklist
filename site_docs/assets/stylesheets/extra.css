@@ -1,0 +1,72 @@
+:root {
+  --md-primary-fg-color: #ffffff;
+  --md-primary-bg-color: #172033;
+  --md-accent-fg-color: #2563eb;
+}
+
+.md-header {
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: none;
+}
+
+.md-header__title,
+.md-tabs__link {
+  color: #172033;
+}
+
+.md-main__inner {
+  margin-top: 1.1rem;
+}
+
+.md-content {
+  --md-typeset-a-color: #2563eb;
+}
+
+.md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.75;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid #eef2f7;
+  padding-bottom: 0.25rem;
+}
+
+.md-typeset img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.md-typeset img[src$=".svg"] {
+  border: 0;
+  border-radius: 0;
+}
+
+.md-typeset code {
+  font-size: 0.72rem;
+}
+
+.md-typeset pre > code {
+  line-height: 1.55;
+}
+
+.md-typeset blockquote {
+  border-left-color: #94a3b8;
+  color: #475569;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 72rem;
+  }
+}
