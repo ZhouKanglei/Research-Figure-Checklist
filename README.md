@@ -1,6 +1,6 @@
 [![](teaser.svg)](https://zhoukanglei.github.io/Research-Figure-Checklist)
 
-!!! note ""
+!!! note "Work in progress"
 
     网站仍在整理中，部分内容会持续补充。
 
