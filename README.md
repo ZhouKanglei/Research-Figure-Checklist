@@ -1,6 +1,8 @@
 [![](teaser.svg)](https://zhoukanglei.github.io/Research-Figure-Checklist)
 
-> 网站仍在整理中，部分内容会持续补充。
+!!! note ""
+
+    网站仍在整理中，部分内容会持续补充。
 
 科研绘图不是简单地**把数据画出来**，而是将实验结果转化为论文论证的一部分。
 
