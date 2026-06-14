@@ -27,7 +27,7 @@
       existing = document.createElement("span");
       existing.className = "site-last-updated";
       existing.innerHTML =
-        '<span class="site-last-updated__label">Last updated:</span> ' +
+        '<span class="site-last-updated__label">Last updated on</span> ' +
         '<span class="site-last-updated__date"></span>';
       footer.appendChild(existing);
     }

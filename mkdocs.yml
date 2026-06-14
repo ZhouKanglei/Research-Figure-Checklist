@@ -18,12 +18,21 @@ theme:
     - content.code.copy
   palette:
     - scheme: default
-      primary: white
+      primary: white 
       accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到暗色主题
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: 切换到亮色主题
   font:
     text: Noto Sans SC
     code: JetBrains Mono
- 
+
 nav:
   - 首页: index.md
   - 绘图原则:
