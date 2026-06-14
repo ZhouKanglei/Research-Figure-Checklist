@@ -4,7 +4,11 @@
 
 设置消融图常用于说明不同数据划分、训练协议或评估设定会带来怎样的性能变化。它的核心任务不是只告诉读者“两个 setting 不一样”，而是让读者看到：**这种 setting 差异是否真实影响了实验结论。**
 
-![Partition ablation figure comparison](fig/comparison.jpg)
+<figure markdown>
+  ![设置消融图修改前后对比](fig/comparison.jpg)
+
+  <figcaption>图 1. 设置消融图修改前后对比，修改后版本把划分差异转化为更直接的结果比较。</figcaption>
+</figure>
 
 ## 文件说明
 
@@ -36,7 +40,11 @@ temporal partition 和 random split 不是可以互换的设置；
 
 ## 原图
 
-![Original partition ablation figure](fig/original.png)
+<figure markdown>
+  ![原始设置消融图](fig/original.png)
+
+  <figcaption>图 2. 原始设置消融图，示意部分占比较大，具体数值比较不够直接。</figcaption>
+</figure>
 
 ### 原图问题
 
@@ -63,7 +71,11 @@ temporal partition 和 random split 不是可以互换的设置；
 
 ## 修改后
 
-![Revised partition ablation figure](fig/revised.png)
+<figure markdown>
+  ![修改后的设置消融图](fig/revised.png)
+
+  <figcaption>图 3. 修改后的设置消融图，用分面柱状图直接展示不同划分方式下的性能差异。</figcaption>
+</figure>
 
 ### 主要改进
 

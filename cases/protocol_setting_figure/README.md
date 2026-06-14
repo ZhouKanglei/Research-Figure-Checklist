@@ -4,7 +4,11 @@
 
 任务设定图常用于解释训练、适应、测试、时间顺序和数据划分方式。它不一定包含实验结果，但必须清楚回答一个问题：**论文到底在什么设定下解决什么问题？**
 
-![Protocol figure comparison](fig/comparison.jpg)
+<figure markdown>
+  ![任务设定图修改前后对比](fig/comparison.jpg)
+
+  <figcaption>图 1. 任务设定图修改前后对比，修改后版本突出核心协议和时间顺序。</figcaption>
+</figure>
 
 ## 文件说明
 
@@ -34,7 +38,11 @@
 
 ## 原图
 
-![Original protocol figure](fig/original.jpg)
+<figure markdown>
+  ![原始任务设定图](fig/original.jpg)
+
+  <figcaption>图 2. 原始任务设定图，信息完整但层级较多，核心设定不够突出。</figcaption>
+</figure>
 
 ### 原图问题
 
@@ -61,7 +69,11 @@
 
 ## 修改后
 
-![Revised protocol figure](fig/revised.jpg)
+<figure markdown>
+  ![修改后的任务设定图](fig/revised.jpg)
+
+  <figcaption>图 3. 修改后的任务设定图，保留核心对比并强化连续适应设定。</figcaption>
+</figure>
 
 ### 主要改进
 

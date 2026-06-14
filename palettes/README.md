@@ -20,7 +20,11 @@
 
 图中包含几类常见形态：色条用于检查颜色区分度，柱状图适合方法或设置对比，折线图适合趋势变化，散点图适合样本分布，热力图适合矩阵或混淆结果。
 
-![不同配色在常见科研图子图中的效果](fig/palette_panel_examples.png)
+<figure markdown>
+  ![不同配色在常见科研图子图中的效果](fig/palette_panel_examples.png)
+
+  <figcaption>图 1. NPG、Science、Lancet 和 Matplotlib 默认配色在常见科研图子图中的效果对比。</figcaption>
+</figure>
 
 生成脚本见 [visualize_palette_panels.py](code/visualize_palette_panels.py)。如果论文中只包含两到三类方法，**优先使用每套配色的前 3-4 个高区分度颜色**；如果是多子图科研图，**同一方法或同一语义在所有子图中应保持同色**。
 
@@ -282,7 +286,18 @@ COLORS = {
 
 ## 9. 参考资料
 
-- [Matplotlib 默认颜色循环示例](https://matplotlib.org/stable/gallery/color/color_cycle_default.html)：查看默认颜色循环的来源和显示效果。
-- [Matplotlib 颜色循环设置](https://matplotlib.org/stable/users/explain/artists/color_cycle.html)：在 `rcParams` 或单个 `Axes` 中设置颜色循环。
-- [ggsci 的 Lancet 期刊配色](https://nanx.me/ggsci/reference/pal_lancet.html)：Lancet / Lancet Oncology 风格配色来源说明。
-- [微生信：常见期刊配色，SCI 论文配色](https://bioinformatics.com.cn/static/others/colorsets/colors.html)：更多期刊风格和科研绘图配色集合。
+Matplotlib 默认颜色循环[^matplotlib-cycle]适合快速探索，正式论文图应根据数据类型和投稿风格重新检查颜色循环。Matplotlib 颜色循环文档[^matplotlib-cycler]说明了如何在 `rcParams` 或单个坐标轴中设置颜色循环。
+
+连续变量推荐使用感知均匀的 colormap，例如 `viridis` 或 `cividis`，避免因为颜色亮度变化不均而制造虚假的视觉边界。
+
+Lancet 风格配色可以参考 ggsci 的实现[^ggsci-lancet]，更多期刊风格配色可参考科研绘图配色集合[^bioinfo-colors]。
+
+*[colormap]: 将数值映射为颜色的规则，常用于 heatmap、attention map 和 density map。
+
+[^matplotlib-cycle]: Matplotlib. *Colors in the default property cycle*. 该示例展示 Matplotlib 默认颜色循环的来源和显示效果。<https://matplotlib.org/stable/gallery/color/color_cycle_default.html>
+
+[^matplotlib-cycler]: Matplotlib. *Styling with cycler*. 该文档说明如何在 `rcParams` 或单个 `Axes` 中设置颜色循环。<https://matplotlib.org/stable/users/explain/artists/color_cycle.html>
+
+[^ggsci-lancet]: ggsci. *Lancet journal color palettes*. 该页面说明 Lancet 和 Lancet Oncology 风格配色。<https://nanx.me/ggsci/reference/pal_lancet.html>
+
+[^bioinfo-colors]: 微生信. *常见期刊配色，SCI 论文配色*. 该页面整理了常见期刊风格和科研绘图配色。<https://bioinformatics.com.cn/static/others/colorsets/colors.html>

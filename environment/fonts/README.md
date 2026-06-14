@@ -19,7 +19,11 @@
 - **无衬线字体**：没有额外装饰笔画，例如 Arial、Helvetica、DejaVu Sans。适合图内坐标轴、图例和短标签。
 - **有衬线字体**：笔画末端有小装饰，例如 Times New Roman。适合正文阅读，但放在图内小字号标注中容易显得更密。
 
-![科研图字体对比](fig/font_comparison.png)
+<figure markdown>
+  ![科研图字体对比](fig/font_comparison.png)
+
+  <figcaption>图 1. 无衬线字体和衬线字体在科研图小字号标注中的视觉差异。</figcaption>
+</figure>
 
 ## 3. 推荐字体
 
@@ -65,21 +69,19 @@ SimHei
 
 ## 4. 参考规范
 
-一些期刊和工具文档对图中文字有明确建议：
+一些期刊和工具文档对图中文字有明确建议。Nature 终稿说明[^nature-final]建议图中文字使用无衬线字体，优先 Helvetica 或 Arial，并在同一篇论文的所有图中保持一致；Nature 科研图指南[^nature-preparing]要求图中文字可读、可编辑，并保留字体嵌入。
 
-- Nature 建议图中文字使用无衬线字体，优先 Helvetica 或 Arial，并在同一篇论文的所有图中保持一致。
-- PLOS ONE 要求图中文字使用 Arial、Times 或 Symbol，字号为 8-12 pt。
-- Matplotlib 支持 PDF / PS 字体嵌入，合理设置字体类型有助于后续编辑和投稿。
-- Latin Modern Math 是接近 LaTeX 数学风格的 OpenType 数学字体。
+Matplotlib 字体文档[^matplotlib-fonts]说明了 PDF 和 PostScript 字体嵌入方式，合理设置字体类型有助于后续编辑和投稿。Latin Modern Math[^lm-math] 是接近 LaTeX 数学风格的 OpenType 数学字体，属于 Latin Modern 字体家族[^lm]。
 
-参考链接：
+[^nature-final]: Nature. *Final submission*. 该说明建议图中文字使用无衬线字体，优先 Helvetica 或 Arial，并在所有图中保持一致。<https://www.nature.com/nature/for-authors/final-submission>
 
-- [Nature final submission](https://www.nature.com/nature/for-authors/final-submission)
-- [Nature initial submission](https://www.nature.com/nature/for-authors/initial-submission)
-- [PLOS ONE figure guidelines](https://journals.plos.org/plosone/s/figures)
-- [Matplotlib font documentation](https://matplotlib.org/stable/users/explain/text/fonts.html)
-- [CTAN Latin Modern Math](https://ctan.org/pkg/lm-math)
-- [CTAN Latin Modern](https://ctan.org/pkg/lm)
+[^nature-preparing]: Nature Research Figure Guide. *Preparing figures - our specifications*. 该规范要求图中文字可读、可编辑，使用标准字体，并保留字体嵌入。<https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/>
+
+[^matplotlib-fonts]: Matplotlib. *Fonts in Matplotlib*. 该文档说明 Matplotlib 在 PDF 和 PostScript 中的字体处理方式。<https://matplotlib.org/stable/users/explain/text/fonts.html>
+
+[^lm-math]: CTAN. *Latin Modern Math*. 该页面提供 Latin Modern Math 字体包信息。<https://ctan.org/pkg/lm-math>
+
+[^lm]: CTAN. *Latin Modern*. 该页面提供 Latin Modern 字体家族信息。<https://ctan.org/pkg/lm>
 
 ## 5. 检查字体匹配
 

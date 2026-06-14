@@ -2,7 +2,11 @@
 
 科研图不仅要“讲清楚”，还要“有证据”。很多 motivation figure 会使用概念曲线、图标、箭头和文字来解释研究问题，但如果缺少真实数据或实验结果支撑，就容易变成 presentation-oriented illustration，而不是 evidence-oriented figure。
 
-![From presentation-oriented to evidence-oriented figures](fig/comparison.jpg)
+<figure markdown>
+  ![展示型示意图与证据型科研图对比](fig/comparison.jpg)
+
+  <figcaption>图 1. 展示型示意图与证据型科研图的对比，右侧版本用真实样例和定量结果支撑核心判断。</figcaption>
+</figure>
 
 ## 文件说明
 

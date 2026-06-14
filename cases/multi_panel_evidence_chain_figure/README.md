@@ -4,7 +4,11 @@
 
 多子图分析图常用于同时展示多个实验现象，例如分布、性能对比、消融结果和样本级分析。它的难点不只是把多个子图放在一起，而是让每个子图都服务于一个明确结论，并共同支撑论文中的核心论点。
 
-![](fig/comparison.jpg)
+<figure markdown>
+  ![多子图证据链分析图修改前后对比](fig/comparison.jpg)
+
+  <figcaption>图 1. 多子图证据链分析图修改前后对比，修改后版本强化子图之间的论证关系。</figcaption>
+</figure>
 
 ## 文件说明
 
@@ -34,7 +38,11 @@ Routing collapse → Uneven oracle gains → Few near-miss rescues
 
 ## 原图
 
-![](fig/original.png)
+<figure markdown>
+  ![原始多子图分析图](fig/original.png)
+
+  <figcaption>图 2. 原始多子图分析图，包含较完整的数据证据，但布局和重点提示不够集中。</figcaption>
+</figure>
 
 ### 原图问题
 
@@ -66,7 +74,11 @@ Routing collapse → Uneven oracle gains → Few near-miss rescues
 
 ## 修改后
 
-![](fig/revision.png)
+<figure markdown>
+  ![修改后的多子图分析图](fig/revision.png)
+
+  <figcaption>图 3. 修改后的多子图分析图，通过统一布局、对齐编号和补充关键标注强化证据链。</figcaption>
+</figure>
 
 ### 主要改进
 
