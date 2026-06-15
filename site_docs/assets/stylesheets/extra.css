@@ -104,6 +104,38 @@
   font-weight: 600;
 }
 
+.md-typeset .example-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.1rem 0 1.35rem;
+}
+
+.md-typeset .example-pair figure {
+  margin: 0;
+}
+
+.md-typeset .example-pair img {
+  width: 100%;
+  margin: 0;
+}
+
+.md-typeset .example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 1.1rem 0 1.35rem;
+}
+
+.md-typeset .example-grid figure {
+  margin: 0;
+}
+
+.md-typeset .example-grid img {
+  width: 100%;
+  margin: 0;
+}
+
 .md-typeset code {
   font-size: 0.72rem;
 }
@@ -196,5 +228,11 @@
 @media screen and (min-width: 76.25em) {
   .md-grid {
     max-width: 72rem;
+  }
+}
+
+@media screen and (max-width: 44.99em) {
+  .md-typeset .example-pair {
+    grid-template-columns: 1fr;
   }
 }
