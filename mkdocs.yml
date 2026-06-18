@@ -44,10 +44,17 @@ nav:
       - 字体配置: environment/fonts/README.md
   - 配色方案: palettes/README.md
   - 案例分析:
-      - 证据型科研图: cases/evidence_oriented_figure/README.md
-      - 多子图证据链分析图: cases/multi_panel_evidence_chain_figure/README.md
-      - 设置消融图: cases/partition_ablation_figure/README.md
-      - 任务设定图: cases/protocol_setting_figure/README.md
+      - 方法框架图:
+          - 方法总览图: cases/framework_overview_figure/README.md
+      - 流程图和示意图:
+          - 任务设定图: cases/protocol_setting_figure/README.md
+          - 动机示意图: cases/evidence_oriented_figure/README.md
+      - 实验结果图:
+          - 多子图证据链分析图: cases/multi_panel_evidence_chain_figure/README.md
+      - 消融分析图:
+          - 设置消融图: cases/partition_ablation_figure/README.md
+      - 可视化案例图:
+          - 局部证据解释图: cases/case_study_figure/README.md
 
 markdown_extensions:
   - admonition
