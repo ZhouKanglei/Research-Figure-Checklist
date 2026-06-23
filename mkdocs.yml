@@ -51,6 +51,7 @@ nav:
           - 动机示意图: cases/evidence_oriented_figure/README.md
       - 实验结果图:
           - 多子图证据链分析图: cases/multi_panel_evidence_chain_figure/README.md
+          - 功能演化气泡图: cases/result_bubble_figure/README.md
       - 消融分析图:
           - 设置消融图: cases/partition_ablation_figure/README.md
       - 可视化案例图:
