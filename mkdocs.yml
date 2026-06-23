@@ -12,6 +12,7 @@ theme:
   features:
     - navigation.instant
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - search.highlight
     - search.suggest
@@ -96,4 +97,5 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js
   - assets/javascripts/mermaid-init.js
+  - assets/javascripts/expand-case-nav.js
   - assets/javascripts/last-updated.js
